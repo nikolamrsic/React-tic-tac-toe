@@ -1,38 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&family=Silkscreen&display=swap");
+* {
+  font-family: "Silkscreen", cursive;
+}
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.anim {
+  animation: anim 0.2s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hue {
+  animation: color 10s ease-in-out infinite alternate;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes color {
   from {
-    transform: rotate(0deg);
+    filter: hue-rotate(-0.25turn);
   }
   to {
-    transform: rotate(360deg);
+    filter: hue-rotate(0.25turn);
+  }
+}
+
+@keyframes anim {
+  from {
+    opacity: 0;
+    scale: 0;
+    rotate: 360deg;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    rotate: 0deg;
+  }
+}
+.test {
+  animaton: shake 0.3s ease;
+}
+.shaker {
+  animaton: shake 0.3s ease infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
   }
 }
